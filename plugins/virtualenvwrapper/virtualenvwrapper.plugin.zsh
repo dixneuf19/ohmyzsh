@@ -1,4 +1,9 @@
 function {
+    if [[ -d "${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper" ]]; then
+      pyenv virtualenvwrapper_lazy
+      return
+    fi
+
     # search in these locations for the init script:
     for virtualenvwrapper in $commands[virtualenvwrapper_lazy.sh] \
       $commands[virtualenvwrapper.sh] \
